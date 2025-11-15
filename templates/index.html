@@ -1,0 +1,44 @@
+{% extends 'master.html' %}
+
+{% include 'header.html' %}
+
+{%block title %}Add Studends {%endblock%}
+
+{% block body %}
+
+<div class="container">
+        <div>
+            <div class="col-md-12"> students list</div>
+        </div>
+        <div>
+            <table class="table">
+                <thead style="background-color: brown; color: aqua;">
+                    <th>id</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>emaik</th>
+                    <th>gender</th>
+                    <th>hobbi</th>
+                    <th>countyr</th>
+                    <th>actions</th>
+                    
+                </thead>
+                <tbody>
+                    {%for student in students %}
+                    <tr>
+                        <td>{{loop.index}}</td>
+                        <td>{{student.first_name}}</td>
+                        <td>{{student.last_name}}</td>
+                        <td>{{student.email}}</td>
+                        <td>{{student.gender}}</td>
+                        <td>{{student.hobbies}}</td>
+                        <td>{{student.country}}</td>
+                        <td></td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+</div>
+
+{%endblock%}

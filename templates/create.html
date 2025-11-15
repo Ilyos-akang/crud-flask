@@ -1,0 +1,73 @@
+{% extends 'master.html' %}
+
+{% include 'header.html' %}
+
+{%block title %}Add Studends {%endblock%}
+
+{% block body %}
+
+<div class="container">
+    <form action="" method="post">
+        <table class="table">
+            <tr>
+                <td>First name</td>
+                <td><input class="form-control" type="text" name="first_name" id="" placeholder=" familiyangizni kiriting">  </td>
+            </tr>
+            <tr>
+                
+                    <td>last name</td>
+                    <td><input type="text" placeholder="ismingizni kiriting" name="last_name" class="form-control"></td>
+            </tr>
+            <!-- email -->
+             <tr>
+                <td>
+                    E-mail
+                </td>
+                <td><input type="email"  name="email" class="form-control" placeholder="emailingizni kiriting"></td>
+             </tr>
+             <!-- password -->
+              <tr>
+                <td>Password</td>
+                <td><input type="password" placeholder="parolni kiriting" name="password" class="form-control"></td>
+              </tr>
+              <!-- gender -->
+               <tr>
+                <td>gender</td>
+                <td>
+                    Male: <input type="radio" name="gender" value="Male">
+                    Female: <input type="radio" name="gender" value="Female">
+                </td>
+               </tr>
+               <!-- hobbi -->
+                <tr>
+                    <td>hobbo</td>
+                    <td>
+                        futbol: <input type="checkbox" name="hobbies" value="futbol">
+                        tennis: <input type="checkbox" name="hobbies" value="tennis">
+                        kitob o'qish: <input type="checkbox" name="hobbies" value="romanlar,qissalar">
+
+
+                    </td>
+                </tr>
+                <!-- country -->
+                 <tr>
+                    <td>
+                        <select name="country" class="form-control">
+                            <option value="O'zbekiston">O'zbekiston</option>
+                            <option value="rus">rus</option>
+                            <option value="karis">kareya</option>
+                        </select>
+                    </td>
+                 </tr>
+                 <tr>
+                    <td colspan="2">
+                        <input type="submit" name="submit" class="btn btn-warning">
+                    </td>
+                 </tr>
+        </table>
+    </form>
+
+
+</div>
+
+{%endblock%}
