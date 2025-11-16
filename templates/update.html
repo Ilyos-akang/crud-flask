@@ -1,0 +1,100 @@
+{% extends 'master.html' %}
+
+{% include 'header.html' %}
+
+{%block title %}Add Studends {%endblock%}
+
+{% block body %}
+
+<div class="container">
+    <form action="" method="post">
+        <table class="table">
+            <tr>
+                <td>First name</td>
+                <td><input class="form-control" type="text" name="first_name" id="" placeholder=" familiyangizni kiriting" value="{{student.first_name}}">  </td>
+            </tr>
+            <tr>
+                
+                    <td>last name</td>
+                    <td><input type="text" placeholder="ismingizni kiriting" name="last_name" class="form-control"></td>
+            </tr>
+            <!-- email -->
+             <tr>
+                <td>
+                    E-mail
+                </td>
+                <td><input type="email"  name="email" class="form-control" placeholder="emailingizni kiriting"></td>
+             </tr>
+             <!-- password -->
+              <tr>
+                <td>Password</td>
+                <td><input type="password" placeholder="parolni kiriting" name="password" class="form-control"></td>
+              </tr>
+              <!-- gender -->
+               <tr>
+                <td>gender</td>
+                <td>
+                    Male: <input type="radio" name="gender" value="male"
+                    {%if student.gender=='male' %}
+                    checked
+                    {%endif%}>
+                    Female: <input type="radio" name="gender" value="female"
+                    {%if student.gender=='female' %}
+                    checked
+                    {%endif%}>
+                </td>
+               </tr>
+               <!-- hobbi -->
+                <tr>
+                    <td>hobbo</td>
+                    <td>
+                        furbol tennis kitob
+                        futbol: <input type="checkbox" name="hobbies" value="futbol"
+                        {%if "futbol" in student.hobbies%}checked {%endif%}
+                        >
+                        tennis: <input type="checkbox" name="hobbies" value="tennis"
+                        {%if "tennis" in student.hobbies%}checked {%endif%}
+                        >
+
+                        kitob : <input type="checkbox" name="hobbies" value="romanlar,qissalar"
+                        {%if "kitob"  in student.hobbies%}checked {%endif%}
+                        >
+
+
+
+                    </td>
+                </tr>
+                <!-- country -->
+                 <tr>
+                    <td>
+                        <select name="country" class="form-control">
+                            <option value="uzb" 
+                                {%if "uzb" in student.country%} selected {%endif%}
+                            >
+                                O'zbekiston</option>
+                            <option value="rus"
+                                {%if "rus" in student.country%} selected {%endif%}
+                            >
+                                
+                                rus</option>
+                            <option value="karis"
+                            
+                                {%if "kareya" in student.country%} selected {%endif%}
+                            >
+                                
+                            kareya</option>
+                        </select>
+                    </td>
+                 </tr>
+                 <tr>
+                    <td colspan="2">
+                        <input type="submit" name="submit" class="btn btn-warning">
+                    </td>
+                 </tr>
+        </table>
+    </form>
+
+
+</div>
+
+{%endblock%}
